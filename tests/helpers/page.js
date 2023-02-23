@@ -10,7 +10,7 @@ class CustomPage {
   // launch a chromium broswer instace
   static async build() {
     const browser = await puppeteer.launch({
-      headless: false,
+      headless: true,
       args: ["--no-sandbox"],
     });
 
@@ -39,7 +39,7 @@ class CustomPage {
     });
 
     // go to /blogs page
-    await this.page.goto("localhost:3000/blogs");
+    await this.page.goto("http://localhost:3000/blogs");
 
     // browser wait for rendering the element, if we don't wait for it, our test fails.
     // Becasue test runner
